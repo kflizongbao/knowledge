@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>把CSS属性background-attachment设为哪一个值，能把背景图像附着到内容上，使得图像会随着内容一起滚动。</title>
+		<style>
+			@keyframes slidein {
+			  from { transform: scaleX(0); }
+			  to   { transform: scaleX(1); }
+			}
+
+			.del {
+				height: 10px;
+				background-color: red;
+				animation: 3s ease-in infinite alternate slidein;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="del">
+
+		</div>
+		<ul>
+			<li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation">animation(MDN)</a></li>
+			<!-- <li><a target="_blank" href="https://blog.csdn.net/gf771115/article/details/79754431">参考文档(博客)</a></li> -->
+		</ul>
+	</body>
+</html>
