@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>时钟</title>
+		<style>
+			.class-wrapper{
+				position: relative;
+				width: 500px;
+				height: 500px;
+				border: 5px solid green;
+				border-radius: 50%;
+			}
+			.hour-container{
+				position: relative;
+				list-style: none;
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.hour-item{
+				display: inline-block;
+				position: absolute;
+				font-size: 30px;
+				font-weight: bold;
+				line-height: 1;
+			}
+			
+			.dot{
+				height: 20px;
+				width: 20px;
+				position: absolute;
+				border-radius: 50%;
+				background-color: green;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="class-wrapper">
+			<ul class="hour-container">
+				<li class="hour-item" style="top: 0;left: 50%;">1</li>
+				<li class="hour-item">2</li>
+				<li class="hour-item">3</li>
+				<li class="hour-item">4</li>
+				<li class="hour-item">5</li>
+				<li class="hour-item">6</li>
+				<li class="hour-item">7</li>
+				<li class="hour-item">8</li>
+				<li class="hour-item">9</li>
+				<li class="hour-item">10</li>
+				<li class="hour-item">11</li>
+				<li class="hour-item">12</li>
+			</ul>
+			<div class="dot">
+			</div>
+		</div>
+		<script>
+			const hourNodes = document.querySelectorAll(".hour-item");
+			const radius = 250;
+			let i = 1;
+			const fontWidth = 18.51;
+			const fontHeight = 40;
+			const distance = 10;
+			
+			for (let node of hourNodes) {
+				const radian = i * 30 * Math.PI / 180;
+				<!-- console.log('cos', Math.cos(radian)); -->
+				<!-- console.log('sin', Math.sin(radian)); -->
+				<!-- console.log('tan', Math.tan(radian)); -->
+
+				let t = (radius - distance) * Math.cos(radian);
+				let l = (radius - distance) * Math.sin(radian);
+				let t10 = 10 * Math.cos(radian);
+				let l10 = 10 * Math.sin(radian);
+				
+				let s = Math.ceil(i * 30 / 90);
+				console.log('s', s);
+				console.log('t', t);
+				console.log('l', l);
+
+				switch (s) {
+					case 1:
+						// 向左平移
+						node.style.top = `${radius - t - t10}px`;
+						node.style.left = `${radius + l - t10}px`;
+					break;
+					case 2:
+						// 向左平移
+						<!-- node.style.top = `${radius + t}px`; -->
+						<!-- node.style.left = `${radius + l}px`; -->
+					break;
+					case 3:
+						// 向右平移
+						<!-- node.style.top = `${radius + t}px`; -->
+						<!-- node.style.left = `${radius - l}px`; -->
+					break;
+					case 4:
+						// 向右平移
+						<!-- node.style.top = `${radius - t}px`; -->
+						<!-- node.style.left = `${radius - l}px`; -->
+					break;
+				}
+
+				
+				// node.style.transform = `translate(${}%, ${}px)`;
+				++i;
+			}
+		</script>
+	</body>
+</html>

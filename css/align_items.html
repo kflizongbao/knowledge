@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>align-items</title>
+		<style>
+			.box{
+				display:-webkit-flex;
+				display:flex;
+				-webkit-flex-wrap:wrap;
+				flex-direction:wrap;
+				width: 200px;
+				height: 200px;
+				margin: 0;
+				padding: 0;
+				border-radius: 5px;
+				list-style: none;
+				background-color: #eee;
+			}
+			
+			.box li{
+				background: #aaa;
+				text-align: center;
+			}
+			
+			#box{
+				-webkit-align-content: flex-start;
+				align-items: flex-start;
+			}	
+		</style>
+	</head>
+	<body>
+		<h2>align-items:flex-start</h2>
+		<ul id="box" class="box">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>屏幕中间有个元素A，元素A中有文字A，随着屏幕宽度的增加</title>
+		<style>
+			html, body{
+				margin: 0;
+				padding: 0;
+				height: 100%;
+			}
+			
+			
+			.A{
+				margin: 0 10px;
+				background-color: blueviolet;
+				padding-top: 50%;
+				position: relative;
+			}
+
+			.A:after{
+				content: 'A';
+				display: block;
+				position: absolute;
+				font-size: 20px;
+				text-align: center;
+				top: 50%;
+				left: 0;
+				right: 0;
+			}			
+		</style>
+		<!-- A元素垂直居于屏幕中央 -->
+		<!-- A元素距离屏幕左右边距各10px -->
+		<!-- A元素里面的文字的font-size：20px水平垂直居中 -->
+		<!-- A元素的高度始终是A元素宽度的50% -->
+	</head>
+	<body>
+		<div class="A"></div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程</title>
+		<style>
+			.animate{
+				transition: width 1s, background-color 1s;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div style="width: 100px;height:100px;background-color: red;" class="animate" id="div_animate">
+		
+		</div>
+		<button onclick="fn()" style="margin-top: 10px;";>开始</button>
+		<script>
+			const view = document.getElementById("div_animate");
+			console.log(view);
+			function fn () {
+				view.style.width = "500px";
+				view.style.backgroundColor = "yellow";
+			}
+		</script>
+	</body>
+</html>

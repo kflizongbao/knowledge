@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+		<button onclick="fn(0)">开始</button>
+		<script>
+			function fn (tag) {
+				const str = 'state,0,0,null,20130620.095724,0.000000,0.000000,311616590,113.834273,32.9273810000002,122榴炮2连,122LP2L,[222140302,双25高炮,1,100,100],[222140302,双25高炮,1,100,100],20130620.095724';
+				let ret;
+				let reg = /\[.+?\]/gi;
+				let i = 0;
+				let st;
+				while (ret = reg.exec(str)) {
+					if (i++ === 1) {
+						st = ret[0];
+					}
+				}
+				console.log(st.replace(/[\]\[]/gi,'').split(','));
+			}
+			
+			function call (t) {
+				console.log(t);
+				fn(t);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>维持宽高比例不变</title>
+		<style>
+			.square{
+				width: 30%;
+				height: 0;
+				background-color: red;
+				margin-top: 50px;
+				padding-bottom: 30%;
+			}
+			
+			.square-pseudo{
+				width: 30%;
+				overflow: hidden;
+				background-color: blue;
+				margin-top: 50px;
+			}
+			
+			.square-pseudo:after{
+				content: '';
+				display: block;
+				background-color: yellow;
+				padding-top: 100%;
+			}			
+		</style>
+	</head>
+	<body>
+		<div class="content" style="background-color: red;height: 10vmax"></div>
+		
+		<div class="square">
+			<span>维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高
+			比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变
+			维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高
+			比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变
+			比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变</span>
+		</div>
+		
+		<div class="square-pseudo">
+			<span>维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高
+			比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比例不变维持宽高比</span>
+		</div>
+	</body>
+</html>

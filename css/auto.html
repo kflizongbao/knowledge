@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>屏幕中间有个元素A，元素A中有文字A，随着屏幕宽度的增加</title>
+		<style>
+			html, body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+			.wrap {
+				width: 100%;
+				height: 100%;
+				background-color: bisque;
+				position: relative;
+			}
+			
+			.A{
+				position: absolute;
+				top: 50%;
+				left: 10px;
+				right: 10px;
+				background-color: blueviolet;
+				font-size: 20px;
+				padding-top: 50%;
+				transform: translate(0, -50%);
+				text-align: center;
+			}
+			
+			.f{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}			
+		</style>
+		<!-- A元素垂直居于屏幕中央 -->
+		<!-- A元素距离屏幕左右边距各10px -->
+		<!-- A元素里面的文字的font-size：20px水平垂直居中 -->
+		<!-- A元素的高度始终是A元素宽度的50% -->
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="A">
+				<div class="f">A</div>
+			</div>
+		</div>
+	</body>
+</html>

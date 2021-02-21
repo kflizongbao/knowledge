@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>draw curve</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="800" height="800"></canvas>
+        <script>
+            var canvas = document.getElementById( 'canvas' );
+            var ctx = canvas.getContext( '2d' );
+
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#000';
+
+            var percent = 0;
+
+            function animate() {
+
+                ctx.clearRect( 0, 0, 800, 800 );
+                ctx.beginPath();
+
+                drawCurvePath( 
+                    ctx,
+                    [ 100, 100 ],
+                    [ 200, 300 ],
+                    0.2,
+                    percent
+                );
+
+                ctx.stroke();
+
+                percent = ( percent + 1 ) % 100;
+
+                requestAnimationFrame( animate );
+
+            }
+
+            animate();
+
+            function drawCurvePath( ctx, start, end, curveness, percent ) {
+
+            }
+        </script>
+    </body>
+</html>

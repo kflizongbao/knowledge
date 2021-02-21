@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+		<button onclick="fn(0)">开始</button>
+		<script>
+			function fn (tag) {
+				let t = 0;
+				let s;
+				console.log(s || (t = 100), t, Math.cos(1), Math.sin(1));
+			}
+			
+			function call (t) {
+				console.log(t);
+				fn(t);
+			}
+		</script>
+	</body>
+</html>

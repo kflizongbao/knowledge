@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+		<button onclick="init()">初始化事件</button>
+		<textarea id="result"></textarea>
+		<script>
+			window.addEventListener("message", receiveMessage, false);
+			function receiveMessage(event){
+				console.log(event);
+			}
+			
+			function init() {
+				console.log('初始化事件');
+				window.postMessage(111, 'http://192.168.0.4/');
+			}
+		</script>		
+	</body>
+</html>

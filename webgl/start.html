@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>webgl</title>
+	</head>
+	<body onload="main()">
+		<canvas id="glcanvas" width="640" height="480">
+			你的浏览器似乎不支持或者禁用了HTML5 <code>&lt;canvas&gt;</code> 元素.
+		</canvas>
+		
+		<script>
+			function main () {
+				const canvas = document.querySelector("#glcanvas");
+				// 初始化WebGL上下文
+				const gl = canvas.getContext("webgl");
+				// 确认WebGL支持性
+				if (!gl) {
+					alert("无法初始化WebGL，你的浏览器、操作系统或硬件等可能不支持WebGL。");
+					return;
+				}
+				gl.clearColor(0.0, 1.0, 0.0, 1.0);
+				console.log(gl.getParameter(gl.COLOR_CLEAR_VALUE));
+				gl.clear(gl.COLOR_BUFFER_BIT);
+				
+			}
+		</script>
+	</body>
+</html>

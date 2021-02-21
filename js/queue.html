@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+	<body>
+		<div id="outer" style="background-color: red;width: 300px;height:300px;display: flex;justify-content: center;align-items: center;">
+			<div id="inner" style="background-color: yellow;width: 150px;height:150px;"></div>
+		</div>
+		<button id="start" onclick="startExec()">开始</button>
+		<script>
+			const inner = document.getElementById("inner");
+			const outer = document.getElementById("outer");
+			const start = document.getElementById("start");
+
+			// 监听 outer 的属性变化。
+			new MutationObserver(() => console.log("mutate outer"))
+				.observe(outer, { attributes: true });
+
+			// 处理 click 事件。
+			function onClick()
+			{
+				console.log("click");
+				setTimeout(() => console.log("timeout"), 0);
+				Promise.resolve().then(() => console.log("promise"));
+				outer.setAttribute("data-mutation", Math.random());
+			}
+
+			// 监听 click 事件。
+			inner.addEventListener("click", onClick);
+			outer.addEventListener("click", onClick);
+			
+			function startExec () {
+				inner.click();
+			}
+		</script>
+	</body>
+</html>
