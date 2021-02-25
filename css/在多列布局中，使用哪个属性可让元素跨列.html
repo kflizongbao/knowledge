@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在多列布局中，使用哪个属性可让元素跨列</title>
+		<style>
+			.container {
+				height: 400px;
+				column-count: 3;
+				overflow: auto;
+				column-gap: 20px;
+				column-rule-width: 5px;
+				column-rule-style: solid;
+				column-rule-color: red;
+				column-fill: auto;
+			}
+			
+			.container .title{
+				column-span: all;
+				-webkit-column-span: all;
+			}
+			
+			.container .content{
+				-webkit-column-break-before: always;
+				-webkit-column-break-after: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">在多列布局中，使用哪个属性可让元素跨列</h1>
+			111London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.
+			222London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.
+			333London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.
+			444London. Michaelmas term lately over, and the Lord Chancellor sitting in Lincoln's Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.
+			<span class="content">Michaelmas term lately over, and the Lord Chancellor</span>
+		
+		</div>
+		<ul>
+			<li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/columns">columns(MDN)</a></li>
+			<li><a target="_blank" href="https://segmentfault.com/a/1190000019421425">参考内容(博客)</a></li>
+		</ul>
+	</body>
+</html>

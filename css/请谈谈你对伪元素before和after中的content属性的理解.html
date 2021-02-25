@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>请谈谈你对伪元素before和after中的content属性的理解</title>
+		<style>
+			.container {
+
+			}
+			
+			.container .title{
+
+			}
+			
+			.container .content{
+
+			}
+			q::before {
+			  content: "«";
+			  color: blue;
+			}
+			q::after {
+			  content: "»";
+			  color: red;
+			}
+			.content::before{
+				content: "before";
+				color: red;
+			}
+			a::after{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<q>一些引用</q>, 他说, <q>比没有好。</q>
+		<span class="content">原文说块级元素才能有:before, :after，其实是不妥的</span>
+		<a href="http://www.cnblogs.com/starof">starof</a>
+		
+		<ul>
+			<li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before">before(MDN)</a></li>
+			<li><a target="_blank" href="https://www.cnblogs.com/wonyun/p/5807191.html">参考内容(博客)</a></li>
+			<li><a target="_blank" href="https://www.cnblogs.com/starof/p/4459991.html">参考内容(博客)</a></li>
+		</ul>
+	</body>
+</html>
