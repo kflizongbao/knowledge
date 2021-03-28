@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS中的特殊性</title>
+		<style>
+			@media screen and (min-width: 500px) {
+				body {
+					color: red;
+				}
+			}
+			
+			@media screen and (min-width: 1000px) {
+				body {
+					color: green;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+		<section>
+有的时候我们为同一个元素设置了不同的 CSS 样式代码，那么元素会启用哪一个 CSS 样式呢?我们来看一下面的代码：
+
+p{color:red;}
+.first{color:green;}
+1
+2
+<p class="first">三年级时，我还是一个<span>胆小如鼠</span>的小男孩。</p>
+1
+p 和 .first 都匹配到了 p 这个标签上，那么会显示哪种颜色呢？green是正确的颜色，那么为什么呢？是因为浏览器是根据权值来判断使用哪种 css 样式的，权值高的就使用哪种 css 样式。
+
+下面是权值的规则：
+标签的权值为1，类选择符的权值为10，ID选择符的权值最高为100。例如下面的代码：
+
+p{color:red;} /*权值为1*/
+p span{color:green;} /*权值为1+1=2*/
+.warning{color:white;} /*权值为10*/
+p span.warning{color:purple;} /*权值为1+1+10=12*/
+#footer .note p{color:yellow;} /*权值为100+10+1=111*/
+		</section>
+		<ul>
+			<!-- <li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Media_Queries/Using_media_queries">media(MDN)</a></li> -->
+			<li><a target="_blank" href="https://blog.csdn.net/cighao/article/details/50531345">参考内容(博客)</a></li>
+			<!-- <li><a target="_blank" href="https://www.cnblogs.com/starof/p/4459991.html">参考内容(博客)</a></li> -->
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在CSS中使用哪3个内容属性能够在元素前面自动插入递增的序号</title>
+		<style>
+			h1 {
+				counter-increment: counter_h1;
+				counter-reset:counter_h2;
+			}
+			h1::before {
+				content: counter(counter_h1) "、";
+				color: red;
+			}
+			h2 {
+				 counter-increment: counter_h2;
+			}
+			h2::before {
+				
+				content: counter(counter_h1) "." counter(counter_h2);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>HTML tutorials</h1>
+		<h2>HTML Tutorial</h2>
+		<h2>XHTML Tutorial</h2>
+		<h2>CSS Tutorial</h2>
+
+		<h1>Scripting tutorials</h1>
+		<h2>JavaScript</h2>
+		<h2>VBScript</h2>
+
+		<h1>XML tutorials</h1>
+		<h2>XML</h2>
+		<h2>XSL</h2>
+		<ul>
+			<li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/counter-increment">counter-increment(MDN)</a></li>
+			<!-- <li><a target="_blank" href="https://www.cnblogs.com/wonyun/p/5807191.html">参考内容(博客)</a></li> -->
+			<!-- <li><a target="_blank" href="https://www.cnblogs.com/starof/p/4459991.html">参考内容(博客)</a></li> -->
+		</ul>
+	</body>
+</html>

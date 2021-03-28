@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>等高布局-利用正padding+负margin</title>
+		<style>
+      .center,
+      .left,
+      .right {
+        padding-bottom: 10000px;
+        margin-bottom: -10000px;
+      }
+      .container {
+        padding-left: 220px;
+        padding-right: 220px;
+        overflow: hidden;
+      }
+		</style>
+	</head>
+	<body>
+   <article class="container">
+        <div class="center">
+            <div class="inner">双飞翼布局</div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </article>
+	</body>
+</html>

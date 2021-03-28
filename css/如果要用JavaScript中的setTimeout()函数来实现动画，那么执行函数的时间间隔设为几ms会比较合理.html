@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>如果要用JavaScript中的setTimeout()函数来实现动画，那么执行函数的时间间隔设为几ms会比较合理</title>
+		<style>
+			
+
+		</style>
+	</head>
+	<body>
+		<div id="container" style="position: absolute;background-color:red;">
+		  如果要用JavaScript中的setTimeout()函数来实现动画，那么执行函数的时间间隔设为几ms会比较合理
+		</div>
+		<script>
+			const dom = document.querySelector("#container");
+			console.log(dom, dom.style.left);
+			setTimeout(anmi, 16);
+			
+			function anmi () {
+				dom.style.left = `${(parseInt(dom.style.left) || 0) + 1}px`;
+				setTimeout(anmi, 16);
+				console.log(parseInt(dom.style.left));
+				console.log(dom.style.left);
+			}
+		</script>
+		<ul>
+			<!-- <li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Media_Queries/Using_media_queries">media(MDN)</a></li> -->
+			<!-- <li><a target="_blank" href="https://blog.csdn.net/cighao/article/details/50531345">参考内容(博客)</a></li> -->
+			<!-- <li><a target="_blank" href="https://www.cnblogs.com/starof/p/4459991.html">参考内容(博客)</a></li> -->
+		</ul>
+	</body>
+</html>

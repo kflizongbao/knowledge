@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>使用定位（position）属性的哪几个关键字可以让元素脱离正常流</title>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				background: red;
+				color: white;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box" id="one">One</div>
+		<div class="box" id="two" style="float: left;height: 50px;background-color: green;">Two</div>
+		<div class="box" id="three">Three</div>
+		<div class="box" id="three1">Three1</div>
+		<div class="box" id="four" style="float: left;height: 70px;background-color: blue;">Four</div>
+		<div style="width: 500px; height:500px;background-color: red;position: relative;border: 10px yellow solid;padding: 20px;">
+			<div style="width: 150px; height: 150px;background-color: green;position: absolute; top: 5px;">
+			</div>
+		</div>
+		<ul>
+			<li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position">position(MDN)</a></li>
+		</ul>
+	</body>
+</html>

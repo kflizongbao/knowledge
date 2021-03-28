@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS选择器有哪些</title>
+		<style>
+			.item + .item{
+				color: red;
+			}
+			.itemc ~ .itemc{
+				color: red;
+			}	
+			h1  strong {color:red;}			
+		</style>
+	</head>
+	<body>
+		<ol>
+			<dl style="order: 100;">id选择器（#myid）</dl>
+			<dl>类选择器（.myclassname）</dl>
+			<dl>标签选择器（div,h1,p）</dl>
+			<dl>后代选择器（h1p）</dl>
+			<dl>相邻后代选择器（子）选择器（ul>li）</dl>
+			<dl>兄弟选择器（li~a）</dl>
+			<dl>相邻兄弟选择器（li+a）</dl>
+			<dl>属性选择器（a[rel="external"]）</dl>
+			<dl>伪类选择器（a:hover,li:nth-child）</dl>
+			<dl>伪元素选择器（::before、::after）</dl>
+			<dl>通配符选择器（*）</dl>
+		</ol>
+		<div>
+		  <ul>
+			<li class="item">List item 1</li>
+			<li class="item">List item 2</li>
+			<li class="items">List item 2</li>
+			<li class="item">List item 3</li>
+		  </ul>
+		  <ol>
+			<li class="item">List item 1</li>
+			<li class="item">List item 2</li>
+			<li class="item">List item 3</li>
+		  </ol>
+		</div>
+		<div>
+			<span>This is not red.</span>
+			<p class="itemc">Here is a paragraph.</p>
+			<code>Here is some code.</code>
+			<span class="itemc">1And here is a span.</span>
+			<span class="itemc">2And here is a span.</span>
+			<span class="itemc">3And here is a span.</span>
+			<span class="itemc">4And here is a span.</span>
+		</div>
+		<h1>This is <strong>very</strong> <strong>very</strong> important.</h1>
+		<h1>This is <em>really <strong>very</strong></em> important.</h1>
+		<div class="">
+			
+		</div>
+		<ul>
+			<li><a target="_blank" href="https://www.w3school.com.cn/cssref/css_selectors.asp">选择器(W3C)</a></li>
+			<!-- <li><a target="_blank" href="https://blog.csdn.net/a772116804/article/details/106279227">参考内容(博客)</a></li> -->
+			<!-- <li><a target="_blank" href="https://www.cnblogs.com/starof/p/4459991.html">参考内容(博客)</a></li> -->
+		</ul>
+	</body>
+</html>

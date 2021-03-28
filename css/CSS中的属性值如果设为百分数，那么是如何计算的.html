@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS中的属性值如果设为百分数，那么是如何计算的</title>
+		<style>
+			.container {
+				font-size: 20px;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		一、font-size
+
+当前的字体大小等于100%
+
+二、line-height
+
+line-height的计算值就是当前字体的值乘以该百分比。注意line-height取值为数值或者百分比的差异，此处不细致讲解。
+
+三、width
+
+正常文档流中和设置浮动的情况下，相对于父元素content-box的宽度；绝对定位时，相对于包含块padding-box的宽度。
+
+四、height
+
+height对百分比也是支持的，但是其和width还是有一个明显的区别：当父元素width属性为auto时，子元素宽度仍然可以使用百分比设置。但是对于height，只要子元素还是在正常文档流当中的，如果父元素的height属性为auto，则子元素height设置为百分比会被忽略。规范中指出：如果包含块的高度没有显式指出（即高度由内容决定），并且该元素不是绝对定位，则计算值为auto。而auto*100/100=NaN。所以，若要高度的百分比设置有效，需要如下设置：
+五、margin、padding
+
+无论是垂直或水平方向，均是相对于父元素的宽度，正常文档流中和设置浮动的情况下，相对于父元素content-box的宽度；绝对定位时，相对于包含块padding-box的宽度。
+
+六、background-position
+
+具体见我的另一篇文章，有细致讲解《CSS之background》。
+
+七、定位元素的left/right/bottom/top百分比值
+
+ top,bottom设置百分比定位是按包含块padding-box的高度来计算的，同样left,right,设置百分比定位是按包含块padding-box的宽度来计算的。
+
+		
+		</div>
+		<div class="container" style="width: 500px;padding:50px;">
+			<div class="del" style="font-size: 300%;border-width:50px;">
+				9999999
+			</div>
+			<div class="del" style="padding: 10%;">
+				9999999
+			</div>
+			<div class="del" style="position: absolute;left: 10%;">
+				888
+			</div>
+		</div>
+		
+	</body>
+</html>
