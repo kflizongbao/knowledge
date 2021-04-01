@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>如何实现一个自适应的正方形</title>
+		<style>
+		.four::after{
+			content: '';
+			display: block;
+			width: 10%;
+			padding-bottom: 10%;
+			background-color: yellow;
+		}
+		</style>
+	</head>
+	<body>
+    <div style="width: 20vmin;height: 20vmin;background-color: red;">
+    </div>
+	<div style="padding-bottom: 10%;background-color: green;width: 10%;">
+    </div>
+	
+	<div class="four">
+    </div>
+</html>

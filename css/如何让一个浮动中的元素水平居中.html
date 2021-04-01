@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>如何让一个浮动中的元素水平居中</title>
+		<style>
+			.flt{
+				float: left;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.nflt{
+				width: 150px;
+				height: 170px;
+				background-color: green;
+			}
+			
+			.tflt{
+				float: left;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				margin-left: 50%;
+				transform: translateX(-50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tflt">
+		</div>
+		<div>
+			<div class="flt" style="background-color: yellow;">
+
+			</div>
+			<div class="nflt">
+
+			</div>
+		</div>
+		<div class="flt" style="background-color: blue;">
+
+		</div>
+		<div class="flt" style="background-color: gray;">
+
+		</div>
+	</body>
+</html>
